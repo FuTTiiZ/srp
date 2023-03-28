@@ -1,0 +1,146 @@
+.mail-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@keyframes zoom {
+  100% {
+    scale: 1.1;
+  }
+}
+
+.mail {
+  position: relative;
+  top: -15%;
+
+  text-align: center;
+
+  min-width: 350px;
+  max-width: 700px;
+  width: 60%;
+
+  _height: 90%;
+
+  background: var(--color-bg-dark);
+
+  border-radius: 40px;
+
+  border-radius: 40px;
+  --inner-border-radius: calc(40px - 1rem);
+
+  box-shadow: var(--color-bg-dark) 0px 0px 12px 0px;
+
+  padding: 1.5rem;
+
+  scale: .7;
+
+  animation: zoom .5s ease-in-out forwards;
+}
+
+.mail h2 {
+  font-family: 'ClashGrotesk-Regular';
+  margin-top: 0;
+}
+
+@keyframes mail-animation {
+  50% {
+    transform: translateY(-10px) rotateY(-5deg);
+  }
+}
+
+.mail img {
+  position: relative;
+  
+  width: 30%;
+
+  user-select: none;
+
+  animation: mail-animation 3s ease-in-out infinite;
+}
+
+.mail input[type="email"] {
+  padding: .5rem .8rem;
+
+  font-family: 'ClashGrotesk-Regular';
+
+  border: 1px solid var(--color-disagree);
+  border-radius: 40px;
+  
+  background: none;
+
+  color: #fff;
+
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+
+  transition: border 0.5s ease-in-out;
+}
+
+.mail input[type="email"]:valid {
+  border: 1px solid var(--color-agree);
+  outline: none;
+}
+
+.mail input[type="email"]:focus {
+  outline: none;
+}
+
+.mail button {
+  margin-left: 1rem;
+
+  padding: .5rem 1rem;
+
+  font-family: 'ClashGrotesk-Regular';
+
+  border: 1px solid var(--color-disagree);
+
+  background: var(--color-disagree);
+  border-radius: 40px;
+
+  color: var(--color-bg-dark);
+
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+
+  box-sizing: border-box;
+
+  opacity: .6;
+  pointer-events: none;
+
+  transition: 
+    background 0.5s ease-in-out,
+    border 0.5s ease-in-out
+  ;
+}
+
+.mail input[type="email"]:valid ~ button {
+  background: var(--color-agree);
+  border: 1px solid var(--color-agree);
+
+  pointer-events: all;
+  cursor: pointer;
+
+  opacity: 1;
+}
+
+.mail input[type="email"]:valid ~ button:hover {
+  background: none;
+  color: var(--color-agree);
+}
+
+.mail p {
+  font-family: 'ClashGrotesk-Regular';
+
+  cursor: pointer;
+
+  margin-bottom: 1rem;
+
+  opacity: .4;
+}
+
+.mail p:hover {
+  font-style: italic;
+  opacity: .5;
+}

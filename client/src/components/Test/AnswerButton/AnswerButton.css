@@ -1,0 +1,140 @@
+.button-container {
+  --btn-color: var(--color-neutral);
+
+  display: flex;
+  flex-direction: column;
+
+  width: 12rem;
+}
+.button-container.restart {
+  align-items: center;
+}
+
+.button-container:first-child { --btn-color: var(--color-disagree); }
+.button-container:nth-child(2) { opacity: .5; }
+.button-container:last-child { --btn-color: var(--color-agree); }
+
+button.answer {
+  width: 100%;
+  text-align: center;
+
+  /* border-radius: var(--inner-border-radius); */
+
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.8em;
+
+  padding: .5rem min(3rem, 5%);
+  padding-bottom: 0;
+
+  /*   background: linear-gradient(45deg, var(--btn-color), 1%, #00000000);
+  border: 1px solid var(--btn-color); */
+
+
+  background: none;
+  border: none;
+
+  color: var(--btn-color);
+
+  /* box-shadow: var(--btn-color) 0px 0px 8px 0px inset; */
+
+  user-select: none;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out ;
+}
+
+.btn-highlight {
+  position: relative;
+
+  width: 55%;
+  height: .2rem;
+
+  left: 23.5%;
+
+  background: var(--btn-color);
+  box-shadow: 0px -4px 20px 0px var(--btn-color);
+
+  border-radius: var(--inner-border-radius);
+
+  margin-bottom: .5rem;
+
+  opacity: 0;
+
+  transition:
+    opacity .25s ease-in-out,
+    translate .25s ease-in-out,
+    rotate .25s ease-in-out
+  ;
+}
+
+.button-container:not([disabled]) button.answer:hover {
+  scale: 1.1;
+}
+
+@keyframes shake-left {
+  0% { rotate: 2deg; }
+  100% { rotate: -2deg; }
+}
+
+@keyframes shake-middle {
+  0% { translate: 0 2px; }
+  100% { rotate: -2deg; }
+}
+
+@keyframes shake-right {
+  0% { rotate: -2deg; }
+  100% { rotate: 2deg; }
+}
+
+.button-container:not([disabled]) button.answer:hover ~ .btn-highlight {
+  animation: shake-middle 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.button-container:not([disabled]):first-child button.answer:hover ~ .btn-highlight {
+  animation: shake-left 0.25s ease-in-out;
+}
+
+.button-container:not([disabled]):last-child button.answer:hover ~ .btn-highlight {
+  animation: shake-right 0.25s ease-in-out;
+}
+
+.button-container[disabled] button.answer {
+  opacity: .5;
+  cursor: default;
+  filter: grayscale(1);
+}
+
+@keyframes rotate {
+  0% { rotate: 120deg; }
+  100% { rotate: -30deg; }
+}
+@keyframes rotate-reverse {
+  0% { rotate: -30deg; }
+  100% { rotate: 120deg; }
+}
+
+img.restart {
+  width: 1.5rem;
+  filter: drop-shadow(0px 0px 5px var(--btn-color));
+
+  opacity: 0;
+
+  rotate: 120deg;
+
+  transition:
+    opacity .25s ease-in-out,
+    translate .25s ease-in-out,
+    rotate .25s ease-in-out
+  ;
+
+  animation: rotate-reverse 0.25s ease-in-out forwards;
+}
+
+.button-container:not([disabled]) button.answer:hover ~ img.restart {
+  animation: rotate 0.25s ease-in-out forwards;
+  opacity: 1;
+}

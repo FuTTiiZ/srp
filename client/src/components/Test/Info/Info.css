@@ -1,0 +1,50 @@
+.info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.info {
+  position: relative;
+  top: -15%;
+
+  text-align: center;
+
+  min-width: 350px;
+  max-width: 700px;
+  width: 60%;
+
+  _height: 90%;
+
+  background: var(--color-bg-dark);
+
+  border-radius: 40px;
+
+  border-radius: 40px;
+  --inner-border-radius: calc(40px - 1rem);
+
+  box-shadow: var(--color-bg-dark) 0px 0px 12px 0px;
+
+  padding: 1.5rem;
+
+  scale: .7;
+
+  animation: zoom .5s ease-in-out forwards;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info h2 {
+  font-family: 'ClashGrotesk-Regular';
+  margin-top: 0;
+}
+
+.info .button-wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
