@@ -16,7 +16,6 @@ const Mail = props => {
     localStorage.setItem('askedMail', true)
     localStorage.setItem('email', email.current.value || 'none')
 
-    //navigate(0, { replace: true })
     props.cb(true)
   }
 

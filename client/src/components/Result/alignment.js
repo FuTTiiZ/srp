@@ -13,8 +13,8 @@ const PARTIES = [
   { id: 'm', name: 'Moderaterne',       alignment: { x: 60, y: 50 } },
   { id: 'df', name: 'Dansk Folkeparti',  alignment: { x: 45, y: 85 } },
   { id: 'fg', name: 'Frie Grønne',       alignment: { x: 15, y: 10 } },
-  { id: 'v', name: 'Venstre',           alignment: { x: 70, y: 60 }, boost: .5 },
-  { id: 'dd', name: 'Danmarksdemokraterne', alignment: { x: 65, y: 87 }, boost: .3 },
+  { id: 'v', name: 'Venstre',           alignment: { x: 70, y: 60 } },
+  { id: 'dd', name: 'Danmarksdemokraterne', alignment: { x: 65, y: 87 } },
   { id: 'el', name: 'Enhedslisten',      alignment: { x: 15, y: 15 } },
   { id: 'aa', name: 'Alternativet',      alignment: { x: 40, y: 20 } },
 ]
@@ -37,11 +37,10 @@ export const getClosestAlignedParties = (x, y) => {
   const alignment = { x, y } // Laver et punkt ud fra x og y
 
   // Gemmer partiernes afstande til den givne holdning,
-  // og tilføjer boost til partier, der har et boost
   const distances = PARTIES.map(party => ({
     id: party.id,
     name: party.name,
-    dist: distBetweenPoints(party.alignment, alignment) * (party.boost || 1)
+    dist: distBetweenPoints(party.alignment, alignment)
   }))
 
   // Sorterer partierne efter afstand, og returnerer de 5 første

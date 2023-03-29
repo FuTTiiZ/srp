@@ -54,14 +54,11 @@ const Question = props => {
 
     const { value } = e.target
 
-    /* if (value.length >= 140) questionEl.current.style.setProperty('--input-color', 'var(--color-red)') */
     if (value.length >= 10 && value.length <= 150) questionEl.current.style.setProperty('--input-color', value.length >= 145 ? 'var(--color-yellow)' : 'var(--color-neutral)')
     else questionEl.current.style.setProperty('--input-color', 'var(--color-red)')
 
     setAnswer(value)
   }
-
-  //console.log(answer, answer.length)
 
   return (<> 
     <div ref={questionEl} onClick={props.isPrevious && props.cb} className={`question ${anim}`} style={props.hide ? {opacity: 0, pointerEvents: 'none'} : {}}>
