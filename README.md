@@ -8,4 +8,4 @@ Underopgave: **Du bedes udarbejde et innovativt forslag til en online valgtest m
 Produktet er en valgtest, gør brug af OpenAI's API til at skønne brugerens politiske overbevisning, og gøre vedkommende klogere på, hvilket dansk politisk parti, personen er mest enig med.
 <br><br>
 
-### Karater: 12
+### Karakter: 12
